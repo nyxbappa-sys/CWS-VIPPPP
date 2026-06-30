@@ -1,0 +1,28 @@
+secure
+debug
+
+cos "CWS SECURE MODE ACTIVE"
+cos "ALL VARIABLES ARE ENCRYPTED"
+
+pef secret ?? "TopSecretData"
+pef key ?? generate_key(256)
+
+cos "SECRET: " + secret
+cos "KEY: " + key
+
+pef encrypted ? encrypt(secret, key)
+cos "ENCRYPTED: " + encrypted
+
+pef decrypted ? decrypt(encrypted, key)
+cos "DECRYPTED: " + decrypted
+
+pef hash_data ? hash(secret)
+cos "HASH: " + hash_data
+
+pef encoded ? base64_encode(secret)
+cos "BASE64: " + encoded
+
+pef decoded ? base64_decode(encoded)
+cos "DECODED: " + decoded
+
+cos "SECURE DEMO COMPLETE"
