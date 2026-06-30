@@ -1,0 +1,13 @@
+debug
+
+cos "TESTING LEXER"
+
+pef x ? 10
+pef y ? 20
+pef z ? x + y
+
+cos "x = " + x
+cos "y = " + y
+cos "z = " + z
+
+cos "LEXER TEST PASSED"
