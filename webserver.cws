@@ -1,0 +1,23 @@
+cso "http"
+
+pef server ? http_server(8080)
+
+server.route("/", func(req, res) {
+    res.html("<h1>CWS ENTERPRISE</h1>")
+    res.html("<p>F1 Language</p>")
+    res.html("<p>No Comments. No Weakness.</p>")
+})
+
+server.route("/api", func(req, res) {
+    res.json({"status": "OK", "version": "2.0.0"})
+})
+
+server.route("/admin", func(req, res) {
+    req.auth ? res.html("<h1>Admin Panel</h1>") : res.status(403)
+})
+
+server.route("/secure", func(req, res) {
+    req.secure ? res.json({"data": "TOP SECRET"}) : res.status(401)
+})
+
+server.serve()
