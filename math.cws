@@ -1,0 +1,48 @@
+func add(a, b) {
+    ret a + b
+}
+
+func sub(a, b) {
+    ret a - b
+}
+
+func mul(a, b) {
+    ret a * b
+}
+
+func div(a, b) {
+    b == 0 ? ret 0 : ret a / b
+}
+
+func mod(a, b) {
+    ret a % b
+}
+
+func pow(a, b) {
+    pef result ? 1
+    wso from 1 to b {
+        result ? result * a
+    }
+    ret result
+}
+
+func sqrt(n) {
+    ret n ^ 0.5
+}
+
+func abs(n) {
+    n < 0 ? ret -n : ret n
+}
+
+func max(a, b) {
+    a > b ? ret a : ret b
+}
+
+func min(a, b) {
+    a < b ? ret a : ret b
+}
+
+func random(min, max) {
+    pef r ? system("echo $RANDOM")
+    ret min + (r % (max - min + 1))
+}
