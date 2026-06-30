@@ -1,0 +1,47 @@
+cso "net"
+
+func http_server(port) {
+    pef server ? net.server(port)
+    ret server
+}
+
+func http_client() {
+    pef client ? net.client()
+    ret client
+}
+
+func http_get(url) {
+    pef client ? http_client()
+    pef result ? client.get(url)
+    ret result
+}
+
+func http_post(url, data) {
+    pef client ? http_client()
+    pef result ? client.post(url, data)
+    ret result
+}
+
+func http_put(url, data) {
+    pef client ? http_client()
+    pef result ? client.put(url, data)
+    ret result
+}
+
+func http_delete(url) {
+    pef client ? http_client()
+    pef result ? client.delete(url)
+    ret result
+}
+
+func http_head(url) {
+    pef client ? http_client()
+    pef result ? client.head(url)
+    ret result
+}
+
+func http_options(url) {
+    pef client ? http_client()
+    pef result ? client.options(url)
+    ret result
+}
