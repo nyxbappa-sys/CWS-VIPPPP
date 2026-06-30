@@ -1,0 +1,84 @@
+cso "net"
+cso "sys"
+
+func port_scan(ip, start, end) {
+    pef results ? []
+    wso from start to end {
+        pef result ? net.scan(ip, loop_index)
+        result ? results.append(result)
+    }
+    ret results
+}
+
+func ping(ip) {
+    pef result ? system("ping -c 1 " + ip)
+    ret result
+}
+
+func traceroute(ip) {
+    pef result ? system("traceroute " + ip)
+    ret result
+}
+
+func dns_lookup(domain) {
+    pef result ? system("nslookup " + domain)
+    ret result
+}
+
+func whois(domain) {
+    pef result ? system("whois " + domain)
+    ret result
+}
+
+func sql_inject(url, payload) {
+    pef result ? net.inject(url, payload)
+    ret result
+}
+
+func xss_payload(url, payload) {
+    pef result ? net.xss(url, payload)
+    ret result
+}
+
+func csrf_check(url) {
+    pef result ? net.csrf(url)
+    ret result
+}
+
+func header_inject(url, header, value) {
+    pef result ? net.header_inject(url, header, value)
+    ret result
+}
+
+func cookie_steal(url) {
+    pef result ? net.cookie_steal(url)
+    ret result
+}
+
+func session_hijack(url, session_id) {
+    pef result ? net.session_hijack(url, session_id)
+    ret result
+}
+
+func packet_sniff(interface) {
+    pef result ? net.sniff(interface)
+    ret result
+}
+
+func mitm_attack(target1, target2) {
+    pef result ? net.mitm(target1, target2)
+    ret result
+}
+
+func dos_attack(target, threads) {
+    wso from 1 to threads {
+        thread dos_thread(target)
+    }
+    ret "DDoS Attack Started"
+}
+
+func dos_thread(target) {
+    wso {
+        system("curl -s " + target + " > /dev/null")
+    }
+}
