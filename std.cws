@@ -1,0 +1,62 @@
+pef VERSION ? "2.0.0"
+pef BUILD ? "ENTERPRISE"
+pef AUTHOR ? "CWS Corporation"
+
+cso "math"
+cso "fs"
+cso "net"
+cso "crypto"
+cso "sys"
+
+func print(s) {
+    cos s
+}
+
+func println(s) {
+    cos s
+    cos ""
+}
+
+func input(prompt) {
+    cos prompt
+    pef result ? ""
+    ret result
+}
+
+func exit(code) {
+    system("exit " + code)
+}
+
+func sleep(ms) {
+    system("sleep " + ms / 1000)
+}
+
+func get_time() {
+    pef time ? system("date")
+    ret time
+}
+
+func get_date() {
+    pef date ? system("date +%Y-%m-%d")
+    ret date
+}
+
+func get_pid() {
+    pef pid ? system("echo $$")
+    ret pid
+}
+
+func get_os() {
+    pef os ? system("uname -s")
+    ret os
+}
+
+func get_arch() {
+    pef arch ? system("uname -m")
+    ret arch
+}
+
+func get_hostname() {
+    pef host ? system("hostname")
+    ret host
+}
