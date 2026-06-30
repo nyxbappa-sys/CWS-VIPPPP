@@ -1,0 +1,32 @@
+cso "hack"
+
+pef target ? "192.168.1.1"
+
+cos "CWS HACKING TOOLKIT"
+cos "TARGET: " + target
+
+pef ports ? port_scan(target, 1, 1024)
+cos "OPEN PORTS: " + ports
+
+pef ping_result ? ping(target)
+cos "PING: " + ping_result
+
+pef dns ? dns_lookup("example.com")
+cos "DNS: " + dns
+
+pef whois_info ? whois("example.com")
+cos "WHOIS: " + whois_info
+
+secure
+pef payload ?? "1' OR '1'='1"
+pef injection ? sql_inject("http://example.com/login", payload)
+cos "SQL INJECTION: " + injection
+
+pef xss ? xss_payload("http://example.com", "<script>alert(1)</script>")
+cos "XSS: " + xss
+
+pef sniff ? packet_sniff("eth0")
+cos "PACKET SNIFF: " + sniff
+
+cos "HACKING COMPLETE"
+cos "USE RESPONSIBLY"
