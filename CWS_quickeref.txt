@@ -1,0 +1,58 @@
+CWS QUICK REFERENCE
+
+VARIABLES:
+  pef name ? value           - Regular variable
+  pef name ?? value          - Secure variable
+  pef name ??? value         - Encrypted variable
+
+PRINT:
+  cos "text"                 - Print text
+  cos variable               - Print variable
+
+LOOP:
+  wso from X to Y            - Loop from X to Y
+
+FUNCTION:
+  func name(params) { code } - Define function
+  call name(args)            - Call function
+  ret value                  - Return value
+
+STRUCT:
+  fse name { fields }        - Define structure
+
+CONDITIONAL:
+  condition ? true : false   - If/Else
+
+ERROR HANDLING:
+  try { code } catch e       - Try/Catch
+
+MODULE:
+  cso "module"               - Import module
+
+SECURITY:
+  secure                     - Enable secure mode
+  encrypt data,key           - Encrypt data
+  decrypt data,key           - Decrypt data
+  genkey length              - Generate key
+
+SYSTEM:
+  system cmd                 - Execute system command
+  include file               - Include file
+
+THREAD:
+  thread name func(args)     - Create thread
+
+HACKING:
+  hack command               - Hacking tool
+
+DEBUG:
+  debug                      - Enable debug mode
+  verbose                    - Enable verbose mode
+  export                     - Export variables
+
+EXAMPLES:
+  cws run hello.cws
+  cws run --secure secure.cws
+  cws build webserver.cws -o server
+  cws encrypt hack.cws -o hack.enc -k MyKey
+  cws decrypt hack.enc -k MyKey
