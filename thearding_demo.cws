@@ -1,0 +1,18 @@
+cso "sys"
+
+func worker(id) {
+    wso from 1 to 10 {
+        cos "Thread " + id + " - Count: " + loop_index
+        sleep(100)
+    }
+}
+
+thread "Worker1" worker(1)
+thread "Worker2" worker(2)
+thread "Worker3" worker(3)
+
+cos "ALL THREADS STARTED"
+
+thread_join_all()
+
+cos "ALL THREADS COMPLETE"
