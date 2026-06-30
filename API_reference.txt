@@ -1,0 +1,41 @@
+CWS API REFERENCE
+
+FILESYSTEM:
+  read_file(file)        - Read file content
+  write_file(file, data) - Write file content
+  file_exists(file)      - Check if file exists
+  file_checksum(file)    - Get file checksum
+  file_delete(file)      - Delete file
+  file_copy(src, dst)    - Copy file
+
+NETWORK:
+  socket_create()        - Create socket
+  socket_connect(host)   - Connect to host
+  socket_bind(port)      - Bind socket
+  socket_listen()        - Listen on socket
+  socket_accept()        - Accept connection
+  socket_send(data)      - Send data
+  socket_recv(size)      - Receive data
+  socket_close()         - Close socket
+
+CRYPTO:
+  encrypt(data, key)     - XOR encrypt
+  decrypt(data, key)     - XOR decrypt
+  generate_key(len)      - Generate key
+  hash(data)             - MD5 hash
+  base64_encode(data)    - Base64 encode
+  base64_decode(data)    - Base64 decode
+
+PROCESS:
+  system(cmd)            - Execute command
+  fork()                 - Fork process
+  wait()                 - Wait for process
+  exit(code)             - Exit process
+  getpid()               - Get PID
+  getppid()              - Get parent PID
+
+THREADING:
+  thread_create(func)    - Create thread
+  thread_join(id)        - Join thread
+  thread_join_all()      - Join all threads
+  thread_kill_all()      - Kill all threads
